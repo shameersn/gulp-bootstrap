@@ -18,6 +18,7 @@
     "gulp-imagemin": "^3.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {

@@ -6,6 +6,7 @@ var imagemin = require('gulp-imagemin');
 var browserSync = require('browser-sync').create();
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var webpack = require('webpack-stream');
 
 // css task
@@ -29,6 +30,7 @@ gulp.task('js', function(){
                 presets: ['env']
             }))
             .pipe(webpack())
+            .pipe(uglify())
             .pipe(concat('main.js'))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('dist/js'))
