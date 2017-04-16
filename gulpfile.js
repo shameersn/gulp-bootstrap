@@ -8,6 +8,8 @@ var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var webpack = require('webpack-stream');
+// Load plugins
+var $ = require('gulp-load-plugins')();
 
 // css task
 gulp.task('css',function(){
@@ -64,4 +66,24 @@ gulp.task('watch',['browserSync','css','js'],function(){
     gulp.watch('src/sass/**/*.scss',['css']);
     gulp.watch('src/js/*.js',['js']);
     gulp.watch('src/*.html',['copy']);
+});
+
+// Fonts
+gulp.task('fonts', function() {
+    return gulp.src([
+                    'node_modules/font-awesome/fonts/fontawesome-webfont.*'])
+            .pipe(gulp.dest('dist/fonts/'));
+});
+
+// Clean
+gulp.task('clean', function () {
+    return gulp.src(['dist/css', 'dist/js', 'dist/images', 'dist/fonts'], { read: false }).pipe($.clean());
+});
+
+// Build
+gulp.task('build', ['copy', 'images', 'js', 'fonts', 'css']);
+
+// Default task
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
 });
