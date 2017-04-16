@@ -7,6 +7,7 @@ var browserSync = require('browser-sync').create();
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 
+// css task
 gulp.task('css',function(){
     return gulp.src('src/sass/**/*.scss')
         .pipe(sourcemaps.init())
@@ -19,6 +20,7 @@ gulp.task('css',function(){
         .pipe(browserSync.stream());
 });
 
+// js task
 gulp.task('js', function(){
 	return gulp.src('src/**/*.js')
             .pipe(sourcemaps.init())
@@ -31,18 +33,21 @@ gulp.task('js', function(){
             .pipe(browserSync.stream());
 });
 
+//image copy and optimize task
 gulp.task('images',function(){
     return gulp.src('src/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'));
 });
 
+//file copy tak
 gulp.task('copy',function(){
     return gulp.src('src/*.html')
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
 
+//browsersync for auto refresh
 gulp.task('browserSync',function(){
     browserSync.init({
         server: {
