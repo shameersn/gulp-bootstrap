@@ -1,1 +1,1 @@
-{"version":3,"sources":["js/main.js"],"names":["TEST","console","log"],"mappings":";;AAAA,CAAC,YAAU;AACP,QAAMA,OAAO,gBAAb;AACAC,YAAQC,GAAR,CAAYF,IAAZ;AACH,CAHD","file":"main.js","sourcesContent":["(function(){\n    const TEST = 'No Hello world';\n    console.log(TEST);\n})();"]}
+{"version":3,"sources":["js/main.js"],"names":[],"mappings":"AAAA","file":"main.js","sourcesContent":[""]}
