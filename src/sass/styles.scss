@@ -1,7 +1,44 @@
+/*
+    Main scss file
+ */
+
+
+/* import bootstrap sass */
+
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+/* import font-awesome */
+
 @import 'node_modules/font-awesome/scss/font-awesome.scss';
-.test {
-    font-size: 3em;
-    display: flex;
-    color: red;
+
+/* load config */
+
+@import 'config/config';
+
+/* load mixins */
+
+@import 'mixins/mixins_breakpoints';
+@import 'mixins/mixins_general';
+@import 'mixins/mixins_grids';
+
+/* load base */
+
+@import 'base/helper_classes';
+@import 'base/typography';
+
+/* load structure */
+
+@import 'structure/header';
+@import 'structure/footer';
+@import 'structure/sections';
+
+/* load grids */
+
+@import 'modules/grids';
+
+/* load pages */
+
+@import 'pages/main';
+body {
+    background: $color-background;
 }

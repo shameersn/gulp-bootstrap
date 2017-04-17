@@ -1,0 +1,17 @@
+/*
+    general
+*/
+
+
+/* pixels to em */
+
+@function em($pixels, $ref:16) {
+    @return ($pixels / $ref) * 1em;
+}
+
+
+/* pixels to rem */
+
+@function rem($pixels, $ref:16) {
+    @return ($pixels / $ref) * 1rem;
+}
